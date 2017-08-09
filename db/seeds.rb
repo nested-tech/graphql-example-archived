@@ -9,8 +9,21 @@
 require 'faker'
 
 200.times do
-  Company.create({
+  company = Company.create({
     name:         Faker::Company.name,
     catch_phrase: Faker::Company.catch_phrase
   })
+
+  (1..10).to_a.sample.times do
+    first_name = Faker::Name.first_name
+    last_name  = Faker::Name.last_name
+
+    Employee.create({
+      companies_id: company.id,
+      first_name:   first_name,
+      last_name:    last_name,
+      age:          (18..70).to_a.sample,
+      email:        Faker::Internet.email("#{first_name}.#{last_name}")
+    })
+  end
 end
