@@ -6,7 +6,7 @@ class GraphqlController < ApplicationController
       # Query context goes here, for example:
       # current_user: current_user,
     }
-    result = GraphqlExampleSchema.execute(query, variables: variables, context: context)
+    result = GraphqlSchema.execute(query, variables: variables, context: context)
     render json: result
   end
 
