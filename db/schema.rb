@@ -21,14 +21,13 @@ ActiveRecord::Schema.define(version: 20170809150859) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.integer "companies_id", null: false
+    t.integer "company_id", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.integer "age", null: false
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["companies_id"], name: "index_employees_on_companies_id"
   end
 
 end

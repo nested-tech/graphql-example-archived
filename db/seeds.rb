@@ -9,8 +9,8 @@
 require 'faker'
 
 200.times do
-  company = Company.create({
-    name:         Faker::Company.name,
+  company = Company.create!({
+    name:         Faker::Company.unique.name,
     catch_phrase: Faker::Company.catch_phrase
   })
 
@@ -18,8 +18,8 @@ require 'faker'
     first_name = Faker::Name.first_name
     last_name  = Faker::Name.last_name
 
-    Employee.create({
-      companies_id: company.id,
+    Employee.create!({
+      company:    company,
       first_name:   first_name,
       last_name:    last_name,
       age:          (18..70).to_a.sample,
