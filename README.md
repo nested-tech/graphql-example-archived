@@ -1,3 +1,7 @@
+# ARCHIVED
+
+---
+
 # An Example GraphQL Service in Ruby
 
 This is an example GraphQL service written in Ruby, using Ruby on Rails and the
